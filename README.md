@@ -1,9 +1,10 @@
+
 `dunstmerge` - Dunst layout manager
 
 SYNOPSIS
 --------
 
-`dunstmerge` [`-v`|`-h`] [`-c` *config-file*] *file* ...
+`dunstmerge` [`-v`|`-h`]  
 `dunstmerge` [*LAYOUT*]
 
 DESCRIPTION

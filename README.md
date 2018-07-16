@@ -1,46 +1,50 @@
+# `dunstmerge` - Dunst layout manager
 
-# `dunstmerge` - a dunst layout manager
-
-- [installation](#installation)
-- [usage](#usage)
-- [files](#files)
-
-`dunstmerge` merges three different files inside *DUNST_DIR* into one `dunstrc` file. The files that gets merged are:
-
-- `dunst-theme`  
-- `layouts/LAYOUT`  
-- `dunst-settings`  
-
-If *LAYOUT* is omitted `dunstmerge` will look in the current `dunstrc` file for the name of the current layout and use that, which will result in a reload of dunst. If *layouts/LAYOUT* doesn't exist, *default* will be used. 
-
-The advantage of using this is that it will be easy to manage multiple layouts and themes, that can be independently generated.
-
-## installation
-
-First you should install [**dunst**](https://dunst-project.org/)  
-
-If you are using **Arch linux**, you can install the dunstmerge package from [AUR](https://aur.archlinux.org/packages/dunstmerge/).  
-
-But since it is just a simple bash script you can just clone this repository and execute `dunstmerge`.  
-
-The advantage of doing a proper install (*either from AUR or manually with* `sudo make install`) is that the manpage also will get installed. 
-
-The first time you execute `dunstmerge` *(or if the directory `~/.config/dunst/layouts` doesn't exist)*, `dunstmerge` will split the current *(or default)* `dunstrc` file and create a default layout.
-
-
-## usage
+SYNOPSIS
+--------
 
 `dunstmerge` [`-v`|`-h`]  
 `dunstmerge` [*LAYOUT*]
 
+DESCRIPTION
+-----------
+
+`dunstmerge` merges three different files inside *DUNST_DIR*
+into one dunstrc file. The files that gets merged are:  
+
+- dunst-theme  
+- layouts/LAYOUT  
+- dunst-settings  
+
+If *LAYOUT* is omitted `dunstmerge` will look in the
+current `dunstrc` file for the name of the current layout
+and use that, which will result in a reload of dunst.
+If *layouts/LAYOUT* doesn't exist, *default* will be used.  
+
+The advantage of using this is that it will be easy
+to manage multiple layouts and themes, that can
+be independently generated.  
+
+If the directory *DUNST_DIR/layouts* doesnt exist,
+`dunstmerge` will split the current (or the default)
+*dunstrc* file and create a default layout the first
+time `dunstmerge` is executed. It will also create
+*dunst-theme* and *dunst-settings* and copy any old
+dunstrc to *DUNST_DIR/dunstrc-orginal*. It will also
+copy the default dunstrc to *DUNST_DIR/dunstrc-default*.
+
+OPTIONS
+-------
+
 `-v`
-Show version and exit.
+  Show version and exit.
 
 `-h`
-Show help and exit.
+  Show help and exit.
 
 
-## files
+FILES
+-----
 
 *DUNST_DIR*  
 Directory containing the dunst configuration files, themes
@@ -74,3 +78,8 @@ theme or the layout.
 *DUNST_DIR/dunst-default*  
 Default dunstrc, copied from */usr/share/dunst/dunstrc*  
 
+
+DEPENDENCIES
+------------
+  
+dunst  

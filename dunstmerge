@@ -51,7 +51,7 @@ main(){
   )
 
   pidof dunst > /dev/null && killall dunst
-  dunst > /dev/null &
+  dunst > /dev/null 2>&1 &
 }
 
 dminstall(){
